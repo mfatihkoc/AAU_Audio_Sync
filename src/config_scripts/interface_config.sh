@@ -1,2 +1,3 @@
 #!/bin/bash
-ifconfig enp4s0 192.168.50.20
+source ../interface.cfg
+ifconfig $INTERFACE 192.168.50.20

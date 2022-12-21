@@ -1,2 +1,3 @@
 #!/bin/bash
-ptp4l -i enp4s0 -f config_files/ptp4l_master.cfg
+source ../interface.cfg
+ptp4l -i $INTERFACE -f config_files/ptp4l_master.cfg
