@@ -85,11 +85,11 @@ To run PTP first launch the master device using:
 
 ### Master
 ```
-sudo ./src/ptp/ptp4l_master_launch.sh
+sudo ./ptp4l_master_launch.sh
 ```
 and synchronize the system clock of the master device to the ptp clock:
 ```
-sudo ./src/ptp/phc2sys_launch.sh
+sudo ./phc2sys_launch.sh
 ```
 
 ### Slave
@@ -97,12 +97,12 @@ To start the slave device, first make sure the `UDPv4` ip address set in `/src/p
 
 Next start the slave device using:
 ```
-sudo ./src/ptp/ptp4l_slave_launch.sh
+sudo ./ptp4l_slave_launch.sh
 ```
 
 and synchronize the system clock of the slave device to the ptp clock:
 ```
-sudo ./src/ptp/phc2sys_launch.sh
+sudo ./phc2sys_launch.sh
 ```
 
 ## Gstreamer Setup
@@ -110,17 +110,17 @@ Streaming using gstreamer should only be started after ptp synchronization is co
 
 First, start the gstreamer slave devices. The slave located on the same physical system as the master device is started with:
 ```
-sudo ./src/gstreamer/gstreamer_slave_1.sh
+sudo ./gstreamer_slave_1.sh
 ```
 To start another slave on a remote device run the second script:
 ```
-sudo ./src/gstreamer/gstreamer_slave_2.sh
+sudo ./gstreamer_slave_2.sh
 ```
 
 After both slaves have been started you can start the master script:
 
 ```
-sudo ./src/gstreamer/gstreamer_master.sh
+sudo ./gstreamer_master.sh
 ```
 
 In case of issues, check to make sure that the ip addresses in `gstreamer_slave_2.sh` and `gstreamer_master.sh` match the network configuration of the actual devices.
